@@ -17,8 +17,6 @@ class Feed extends Component {
     render() {
         const {cart, toggleToCart} = this.props;
         return (
-            <>
-            <Header cart={cart}></Header>
             <div className="feed">
                 <h1>This is Feed</h1>
                 {
@@ -32,7 +30,6 @@ class Feed extends Component {
                         )
                 }
             </div>
-            </>
         );
     }
 }
