@@ -28,6 +28,7 @@ class Feed extends Component {
     }
     
     render() {
+        console.log(this.props);
         const cart = this.state.cart;
         return (
             <>
