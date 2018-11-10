@@ -3,21 +3,12 @@ const imgStyle = {
     width:'300px'
 }
 class Post extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            liked:false
-        }
-    }
-    
-    toggleLiked = () =>{
-        this.setState({liked:!this.state.liked})
-    }
     
     render() {
-        const tgClass = this.state.liked? 'heart-filled': 'heart-empty';
+        const {toggleToCart, product, liked} = this.props;
+        const tgClass = liked? 'heart-filled': 'heart-empty';
         const heartClass = `sprite icon ${tgClass}`;
-        const {toggleToCart, product} = this.props;
+        
         return (
             <div className="post">
                 <img
@@ -30,7 +21,6 @@ class Post extends Component {
                         onClick={
                             () =>{
                                 toggleToCart(product.id)
-                                this.toggleLiked();
                             }
                             }
                         ></div>

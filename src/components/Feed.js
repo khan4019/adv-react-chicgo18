@@ -7,29 +7,15 @@ class Feed extends Component {
     constructor(props) {
         super(props);
         this.state ={
-            products:[],
-            cart:[]
+            products:[]
         }
     }
     componentDidMount() {
         this.setState({products:data});
     }
-
-    toggleToCart = id =>{
-        const cart = this.state.cart;
-        let newCart;
-        if(cart.includes(id)){
-            newCart = cart.filter(curr => curr !== id);
-        }
-        else{
-            newCart = [...cart, id]
-        }
-        this.setState({cart:newCart});
-    }
     
     render() {
-        console.log(this.props);
-        const cart = this.state.cart;
+        const {cart, toggleToCart} = this.props;
         return (
             <>
             <Header cart={cart}></Header>
@@ -40,7 +26,8 @@ class Feed extends Component {
                         <Post
                             key={product.id}
                             product={product}
-                            toggleToCart ={this.toggleToCart}
+                            liked={cart.includes(product.id)}
+                            toggleToCart ={toggleToCart}
                         >{product.name}</Post>
                         )
                 }
