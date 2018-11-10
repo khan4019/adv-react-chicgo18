@@ -12,6 +12,7 @@ import rootReducer from './reducers/';
 import FeedContainer from './containers/FeedContainer';
 import HeaderContainer from './containers/HeaderContainer';
 import rootSaga from './sagas/productSagas';
+import CartContainer from './containers/CartContainer';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -32,7 +33,7 @@ class App extends Component {
               <HeaderContainer></HeaderContainer>
               <Route exact path="/" component={FeedContainer}></Route>
               <Route path="/feed" component={FeedContainer}></Route>
-              <Route path="/cart" component={Cart}></Route>
+              <Route path="/cart" component={CartContainer}></Route>
             </div>
           </Router>
         </div>
