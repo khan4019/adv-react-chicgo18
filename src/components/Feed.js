@@ -16,12 +16,12 @@ class Feed extends Component {
     
     render() {
         console.log(this.props);
-        const {cart, toggleToCart} = this.props;
+        const {cart, toggleToCart, products} = this.props;
         return (
             <div className="feed">
                 <h1>This is Feed</h1>
                 {
-                    this.state.products.map(product=>
+                    products.map(product=>
                         <Post
                             key={product.id}
                             product={product}
