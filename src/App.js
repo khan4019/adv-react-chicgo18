@@ -7,11 +7,11 @@ import Header from './components/Header';
 import Feed from './components/Feed';
 import Cart from './components/Cart';
 import './App.css';
-import cartReducer from './reducers/cartReducers';
+import rootReducer from './reducers/';
 import FeedContainer from './containers/FeedContainer';
 import HeaderContainer from './containers/HeaderContainer';
 
-const store = createStore(cartReducer);
+const store = createStore(rootReducer);
 
 class App extends Component {
   render() {
@@ -21,13 +21,11 @@ class App extends Component {
           <Router>
             <div>
               <HeaderContainer></HeaderContainer>
-              <div>Feed</div>
-              <div>
-                this is footer
-              </div>
+              <Route exact path="/" component={FeedContainer}></Route>
+              <Route path="/feed" component={FeedContainer}></Route>
+              <Route path="/cart" component={Cart}></Route>
             </div>
           </Router>
-          
         </div>
       </Provider>
     );

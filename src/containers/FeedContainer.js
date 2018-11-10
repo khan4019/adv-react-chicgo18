@@ -5,7 +5,7 @@ import { toggleToCartAction } from '../actions/cartActions';
 import Feed from '../components/Feed';
 
 const mapStateToProps = state =>({
-    cart: state
+    cart: state.cart
 })
 
 const mapDispatchToProps = dispatch =>({

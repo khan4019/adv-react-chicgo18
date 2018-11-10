@@ -1,5 +1,5 @@
 
-const cartReducer = (state=[], action) =>{
+const cartReducers = (state=[], action) =>{
     switch (action.type) {
         case 'TOGGLE_TO_CART':
             const id = action.id;
@@ -15,4 +15,4 @@ const cartReducer = (state=[], action) =>{
     }
 }
 
-export default cartReducer;
+export default cartReducers;
