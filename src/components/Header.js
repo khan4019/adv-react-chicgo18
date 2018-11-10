@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 const Header = ({cart}) => {
     const tglClass = cart.length ? 'heart-filled': 'heart-empty';
@@ -12,11 +13,14 @@ const Header = ({cart}) => {
     return (
         <div className="header">
             <div className="icon-container">
-                <div className="sprite icon logo-icon"></div>
+                <Link to="/">
+                    <div className="sprite icon logo-icon"></div>
+                </Link>
                 <div className="divider"></div>
                 <div className="sprite icon logo-name"></div>
-
-                <div className={heartClass}></div>
+                <Link to="/cart">
+                    <div className={heartClass}></div>
+                </Link>
                 <sup style={sizeStyle}>{cart.length}</sup>
                 <div className="sprite icon profile"></div>
             </div>

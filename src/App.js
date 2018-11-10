@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Feed from './components/Feed';
+import Cart from './components/Cart';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       
-        <Feed></Feed>
+        <Router>
+          <div>
+            <Route exact path="/" component={Feed}></Route>
+            <Route path="/feed" component={Feed}></Route>
+            <Route path="/cart" component={Cart}></Route>
+          </div>
+        </Router>
+        
       </div>
     );
   }
